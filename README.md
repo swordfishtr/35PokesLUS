@@ -46,6 +46,20 @@ If true, will only collect stats from ranked ladder battles. The ranked state of
 
 Number of seconds to wait between each query for ongoing battles. Minimum 30.
 
+## Live usage stats server API
+
+The server responds with a JSON object that maps unique battle room names (ex: "battle-gen9nationaldex35pokes-2675568963") for keys and an array of each Pokemon's ID for values. Pokemon IDs can repeat if both players brought the same Pokemon. An empty `{}` means that the bot has not found a battle yet.
+
+`GET /`
+
+Returns all usage data in the database.
+
+`GET /:group/:meta`
+
+Returns all usage data filtered by the 35 Pokes metagame specified. If a battle contains a Pokemon that is not part of the specified metagame, that battle is excluded from the results. See [35 Pokes Index](https://github.com/swordfishtr/35PokesIndex) for available groups and metas.
+
+Ex: `GET /2026/2026_09` for the September 2026 metagame.
+
 ## Credits
 
 This project includes code from:
