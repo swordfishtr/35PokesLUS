@@ -1,0 +1,7 @@
+{
+	"debug": true,
+	"port": 0,
+	"formats": ["gen9nationaldex35pokes"],
+	"rankedOnly": false,
+	"interval": 60
+}
